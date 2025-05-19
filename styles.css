@@ -44,30 +44,16 @@ h1 {
   margin: 20px auto 0;
 }
 
-
-/* Existing styles... */
-
-.social-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 40px;
-  justify-items: center;
-  max-width: 960px;
-  margin: 20px auto 0;
+.social-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
-
-/* Add this at the end: Vertical stacking on narrow screens */
-@media (max-width: 600px) {
-  .social-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 320px; /* slightly smaller than card width */
-    margin: 20px auto;
-    align-items: center;
-  }
-}
-
 
 .social-card:hover {
     transform: scale(1.05);
@@ -217,4 +203,16 @@ h1 {
     background-color: var(--bluesky-color);
     color: white;
     border-color: var(--bluesky-color);
+}
+
+/* Responsive vertical stack on narrow screens */
+@media (max-width: 600px) {
+  .social-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    max-width: 320px !important;
+    margin: 20px auto !important;
+    align-items: center !important;
+  }
 }
