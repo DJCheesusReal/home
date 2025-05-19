@@ -29,6 +29,9 @@ body {
 .container {
     text-align: center;
     padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    /* limits container width for better layout */
 }
 
 h1 {
@@ -36,19 +39,35 @@ h1 {
 }
 
 .social-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 40px;
-  justify-items: center;
-  max-width: 960px;
-  margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    justify-items: center;
+}
+
+@media (min-width: 700px) {
+    .social-cards {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns between 700px and 1299px */
+    }
+}
+
+@media (min-width: 1300px) {
+    .social-cards {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns at 1300px+ */
+    }
 }
 
 .social-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
     padding: 20px;
-    width: 300px;
+    width: 280px;
+    /* fixed width matching minmax min width */
+    max-width: 100%;
+    /* so it shrinks nicely on narrow screens */
     text-align: left;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,6 +139,9 @@ h1 {
     color: var(--accent-color);
     border-color: var(--secondary-accent);
 }
+
+
+/* Platform-specific styles */
 
 .social-card.twitch .platform-icon {
     color: var(--twitch-color);
@@ -203,16 +225,4 @@ h1 {
     background-color: var(--bluesky-color);
     color: white;
     border-color: var(--bluesky-color);
-}
-
-/* Responsive vertical stack on narrow screens */
-@media (max-width: 600px) {
-  .social-cards {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-    max-width: 320px !important;
-    margin: 20px auto !important;
-    align-items: center !important;
-  }
 }
