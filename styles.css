@@ -1,0 +1,458 @@
+
+@font-face {
+  font-family: "PxPlus IBM BIOS";
+  src: url("assets/fonts/PxPlus_IBM_BIOS.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("assets/fonts/SFProDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("assets/fonts/SFProDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("assets/fonts/SFProDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0d0e11;
+  --card: #16181d;
+  --card-hover: #1c1f25;
+  --text: #f0f2f5;
+  --muted: #9da5b4;
+  --yellow: #fef200;
+  --twitch: #a970ff;
+  --page-pad: clamp(32px, 2.8125vw, 54px);
+  --grid-gap: clamp(8px, 0.72917vw, 14px);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--yellow);
+  color: #000;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  width: min(1866px, calc(100% - var(--page-pad)));
+  margin-inline: auto;
+  padding: 14px 0 11px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  width: clamp(120px, 10.9375vw, 210px);
+  aspect-ratio: 1;
+}
+
+.logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wordmark {
+  margin: clamp(6px, 0.625vw, 12px) 0 0;
+  color: var(--yellow);
+  font-family: "PxPlus IBM BIOS", monospace;
+  font-size: clamp(26px, 2.5vw, 48px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tagline {
+  margin: clamp(2px, 0.15625vw, 3px) 0 0;
+  color: var(--muted);
+  font-family: "PxPlus IBM BIOS", monospace;
+  font-size: clamp(14px, 1.40625vw, 27px);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.socials-title {
+  margin: clamp(20px, 1.25vw, 24px) 0 0;
+  font-size: clamp(32px, 3.4375vw, 66px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin-top: clamp(17px, 1.77vw, 34px);
+}
+
+.social-card {
+  container-type: inline-size;
+  display: block;
+  border-radius: 20px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.25s var(--ease);
+}
+
+.social-inner {
+  display: flex;
+  align-items: center;
+  height: clamp(126px, 47.24cqw, 171px);
+  padding: 0 5.52cqw 0 8.29cqw;
+  gap: 4.42cqw;
+  overflow: hidden;
+  border-radius: clamp(12px, 5.52cqw, 20px);
+  background: var(--card);
+  transition: background-color 0.25s ease;
+}
+
+.social-card:hover .social-inner {
+  background: var(--card-hover);
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+}
+
+.social-card:active {
+  transform: translateY(-1px);
+}
+
+.social-card:focus-visible {
+  outline: none;
+}
+
+.social-card:focus-visible .social-inner {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.social-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon img {
+  height: auto;
+}
+
+.icon--x,
+.icon--tiktok,
+.icon--twitch {
+  width: clamp(40px, 27.62cqw, 100px);
+}
+
+.icon--youtube {
+  width: clamp(44px, 30.94cqw, 112px);
+}
+
+.icon--discord {
+  width: clamp(52px, 34.81cqw, 126px);
+}
+
+.social-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 4.42cqw, 16px);
+  min-width: 0;
+  transform: translateY(clamp(-12px, -1.66cqw, -6px));
+}
+
+.social-name,
+.social-handle {
+  display: block;
+  white-space: nowrap;
+}
+
+.social-name {
+  color: var(--text);
+  font-size: clamp(24px, 11.05cqw, 40px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.037em;
+}
+
+.social-handle {
+  color: var(--muted);
+  font-size: clamp(18px, 9.39cqw, 34px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.021em;
+}
+
+.handle--long {
+  font-size: clamp(17px, 8.01cqw, 29px);
+  letter-spacing: 0.014em;
+}
+
+@media (min-width: 560px) {
+  .card--x .social-inner {
+    gap: 3.6cqw;
+  }
+
+  .card--youtube .social-inner {
+    padding-left: 4.97cqw;
+    gap: 5.52cqw;
+  }
+
+  .card--youtube .icon--youtube {
+    width: 29.83cqw;
+  }
+
+  .card--discord .social-inner {
+    gap: 2.49cqw;
+  }
+}
+
+.stream {
+  position: relative;
+  height: clamp(320px, 39.3229vw, 755px);
+  margin-top: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+#twitch-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+.stream-offline {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 3vw, 48px);
+  background:
+    radial-gradient(90% 120% at 72% 42%, #17181d 0%, #000 68%),
+    #000;
+}
+
+.stream-offline[hidden] {
+  display: none;
+}
+
+.offline-card {
+  width: min(100%, 560px);
+  padding: clamp(24px, 3.2vw, 42px) clamp(24px, 3.6vw, 48px);
+  border-radius: 10px;
+  background: #fff;
+  color: #0e0e10;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+.offline-badge {
+  display: inline-block;
+  padding: 0.45em 0.75em;
+  border-radius: 6px;
+  background: #efeff1;
+  font-size: clamp(12px, 1vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.offline-title {
+  margin: 0.65em 0 0;
+  font-size: clamp(24px, 2.2vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.offline-title span {
+  color: #9147ff;
+}
+
+.offline-copy {
+  margin: 0.75em 0 0;
+  font-size: clamp(16px, 1.4vw, 24px);
+  line-height: 1.35;
+}
+
+.offline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  margin-top: 1.2em;
+  color: #9147ff;
+  font-size: clamp(16px, 1.4vw, 24px);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.offline-link svg {
+  width: 0.8em;
+  height: 0.8em;
+  flex: none;
+}
+
+.offline-link:hover {
+  color: #772ce8;
+  text-decoration: underline;
+}
+
+.offline-link:focus-visible {
+  outline: 3px solid #9147ff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.offline-note {
+  margin: 1.6em 0 0;
+  color: #6b6d75;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1099px) {
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-card {
+    flex: 0 1 calc((100% - 2 * var(--grid-gap)) / 3);
+  }
+}
+
+@media (max-width: 799px) {
+  .social-card {
+    flex-basis: calc((100% - var(--grid-gap)) / 2);
+  }
+}
+
+@media (max-width: 559px) {
+  :root {
+    --page-pad: 32px;
+    --grid-gap: 10px;
+  }
+
+  .page {
+    padding-top: 18px;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+
+  .social-card {
+    flex: 1 1 100%;
+  }
+
+  .social-inner {
+    height: 150px;
+    padding: 0 24px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+
+  .social-copy {
+    gap: 12px;
+    transform: translateY(-6px);
+  }
+
+  .social-name {
+    font-size: 32px;
+  }
+
+  .social-handle {
+    font-size: 26px;
+  }
+
+  .handle--long {
+    font-size: 22px;
+  }
+
+  .icon--x,
+  .icon--tiktok,
+  .icon--twitch {
+    width: 76px;
+  }
+
+  .icon--youtube {
+    width: 88px;
+  }
+
+  .icon--discord {
+    width: 96px;
+  }
+
+  .stream {
+    min-height: 340px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-card,
+  .social-inner {
+    transition: none;
+  }
+
+  .social-card:hover {
+    transform: none;
+  }
+}

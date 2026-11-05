@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DJ_Cheesus — content creator</title>
+  <meta name="description" content="All of DJ_Cheesus' socials, plus the latest Twitch stream.">
+  <meta name="theme-color" content="#0d0e11">
+  <meta property="og:title" content="DJ_Cheesus — content creator">
+  <meta property="og:description" content="All of DJ_Cheesus' socials, plus the latest Twitch stream.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="125" cy="125" r="125" fill="#FEF200"/>
+          <path fill="#000000" d="M62 46H187V126H202V171H157V79H92V171H46V126H62V46Z"/>
+        </svg>
+      </div>
+
+      <h1 class="wordmark">DJ_Cheesus</h1>
+      <p class="tagline">content creator</p>
+      <h2 class="socials-title">all my socials :D</h2>
+    </header>
+
+    <nav class="socials" aria-label="DJ_Cheesus on social media">
+      <a class="social-card card--x" href="https://x.com/dj_cheesus" target="_blank" rel="noopener noreferrer" aria-label="Twitter (X), @dj_cheesus">
+        <span class="social-inner">
+          <span class="social-icon"><img class="icon--x" src="assets/icons/x.png" alt="" width="288" height="270"></span>
+          <span class="social-copy">
+            <span class="social-name">Twitter (X)</span>
+            <span class="social-handle">@dj_cheesus</span>
+          </span>
+        </span>
+      </a>
+
+      <a class="social-card" href="https://www.tiktok.com/@dj_cheesus" target="_blank" rel="noopener noreferrer" aria-label="Tiktok, @dj_cheesus">
+        <span class="social-inner">
+          <span class="social-icon"><img class="icon--tiktok" src="assets/icons/tiktok.png" alt="" width="711" height="820"></span>
+          <span class="social-copy">
+            <span class="social-name">Tiktok</span>
+            <span class="social-handle">@dj_cheesus</span>
+          </span>
+        </span>
+      </a>
+
+      <a class="social-card card--youtube" href="https://www.youtube.com/@dj_cheesus" target="_blank" rel="noopener noreferrer" aria-label="Youtube, @dj_cheesus">
+        <span class="social-inner">
+          <span class="social-icon"><img class="icon--youtube" src="assets/icons/youtube.png" alt="" width="1744" height="1226"></span>
+          <span class="social-copy">
+            <span class="social-name">Youtube</span>
+            <span class="social-handle">@dj_cheesus</span>
+          </span>
+        </span>
+      </a>
+
+      <a class="social-card" href="https://www.twitch.tv/dj_cheesuslive" target="_blank" rel="noopener noreferrer" aria-label="Twitch, @dj_cheesuslive">
+        <span class="social-inner">
+          <span class="social-icon"><img class="icon--twitch" src="assets/icons/twitch.png" alt="" width="440" height="512"></span>
+          <span class="social-copy">
+            <span class="social-name">Twitch</span>
+            <span class="social-handle handle--long">@dj_cheesuslive</span>
+          </span>
+        </span>
+      </a>
+
+      <a class="social-card card--discord" href="https://discord.gg/djcheesus" target="_blank" rel="noopener noreferrer" aria-label="Discord invite">
+        <span class="social-inner">
+          <span class="social-icon"><img class="icon--discord" src="assets/icons/discord.png" alt="" width="512" height="366"></span>
+          <span class="social-copy">
+            <span class="social-name">Discord</span>
+            <span class="social-handle">Invite</span>
+          </span>
+        </span>
+      </a>
+    </nav>
+
+    <section class="stream" aria-label="DJ_CheesusLive on Twitch">
+      <iframe
+        id="twitch-player"
+        title="DJ_CheesusLive Twitch player"
+        allowfullscreen
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+      <div class="stream-offline" id="stream-offline" hidden>
+        <div class="offline-card">
+          <span class="offline-badge">Offline</span>
+          <h3 class="offline-title"><span>DJ_CheesusLive</span> is offline.</h3>
+          <p class="offline-copy">Check out the latest Minecraft stream over on Twitch.</p>
+          <a class="offline-link" href="https://www.twitch.tv/dj_cheesuslive/videos" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 2.5 17 10 4 17.5V2.5Z" fill="currentColor"/></svg>
+            Watch Latest Stream
+          </a>
+          <p class="offline-note">The live Twitch player loads when this page is served over HTTP.</p>
+        </div>
+      </div>
+      <noscript>
+        <div class="stream-offline">
+          <div class="offline-card">
+            <span class="offline-badge">Offline</span>
+            <h3 class="offline-title"><span>DJ_CheesusLive</span> on Twitch</h3>
+            <p class="offline-copy">Enable JavaScript to load the live Twitch player.</p>
+            <a class="offline-link" href="https://www.twitch.tv/dj_cheesuslive" target="_blank" rel="noopener noreferrer">Open Twitch</a>
+          </div>
+        </div>
+      </noscript>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
