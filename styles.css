@@ -242,6 +242,29 @@ img {
   letter-spacing: 0.014em;
 }
 
+.creator-bio {
+  margin-top: 12px;
+  padding: clamp(18px, 2vw, 28px);
+  border-radius: 20px;
+  background: var(--card);
+  text-align: center;
+}
+
+.creator-bio h2 {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(18px, 1.5vw, 24px);
+  line-height: 1.2;
+}
+
+.creator-bio p {
+  max-width: 980px;
+  margin: 8px auto 0;
+  color: var(--muted);
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.55;
+}
+
 @media (min-width: 560px) {
   .card--x .social-inner {
     gap: 3.6cqw;
