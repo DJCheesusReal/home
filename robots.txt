@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://socials.djcheesus.com/sitemap.xml
